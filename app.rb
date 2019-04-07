@@ -3,7 +3,6 @@ require 'bundler/setup'
 
 require 'sinatra'
 require 'sequel'
-require 'pry'
 
 DB = Sequel.connect('mysql2://localhost/mydora')
 
@@ -33,6 +32,8 @@ get '/song.json' do
 
   @artist[:name] = clean_up_title @artist[:name]
   @song[:name] = clean_up_title @song[:name]
+
+  @artist[:parsed_location] = clean_up_title [@artist[:city], @artist[:state], @artist[:country]].compact.join(', ')
 
   if @artist[:genres].nil?
     @artist[:genres] = ''

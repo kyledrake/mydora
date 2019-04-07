@@ -33,11 +33,21 @@
                 </div>
                 <div class="modal-body" style="text-align: left">
                   <p>
-                    Mydora is a continuous streaming player that gives you a deep dive into the lost archives of Myspace music,
-                    based on some recovered data called the <a href="https://archive.org/details/myspace_dragon_hoard_2010" target="_blank">Dragon Hoard</a>.
+                    Mydora is a continuous streaming player that gives you a deep dive into the lost archives of Myspace Music,
+                    based on some recovered data called the <a href="https://archive.org/details/myspace_dragon_hoard_2010" target="_blank">Dragon Hoard</a>, with some additional metadata (most notably the locations and genres) from a different scan of Myspace conducted back in 2009.
                   </p>
 
-                  <p>Mydora was developed by <a href="https://kyledrake.com" target="_blank">Kyle Drake</a> and the source code is available <a href="https://github.com/kyledrake/mydora" target="_blank">here</a>.
+                  <p>
+                    The archived collection contains 490,273 songs, which represents a tiny fraction of tens of millions of songs that were destroyed, many of which had no copies and are lost forever. This project tells the story of this amazing music, and I hope
+                    it gives you both entertainment, and an understanding of how valuable this collection truly was.
+                  </p>
+
+                  <p>
+                    Mydora was developed by <a href="https://kyledrake.com" target="_blank">Kyle Drake</a> and the source code is available <a href="https://github.com/kyledrake/mydora" target="_blank">here</a>.
+                  </p>
+
+                  <p style="text-align: center">
+                    <img src="/see-you-yacht-rock-cowboy.jpg" style="width: 300px">
                   </p>
                 </div>
                 <div class="modal-footer">
@@ -62,6 +72,9 @@
 
           <h5>Now Playing</h5>
           <div id="song_info" style="font-weight: bold"></div>
+
+          <div id="location"></div>
+
           <small><a onclick="window.open('https://www.google.com/search?q='+document.getElementById('song_info').innerText)" href="#" href="">search on google</a></small>
           <br><br>
           <div id="genres"></div>

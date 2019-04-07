@@ -26,6 +26,7 @@ function getSong() {
 
       document.getElementById("song_info").innerText = song_artist;
       document.getElementById('genres').innerText = data.artist.genres;
+      document.getElementById('location').innerText = data.artist.parsed_location;
       history.innerHTML = song_artist+'<br>'+document.getElementById('history').innerHTML;
       history_cover.style.display = 'block';
       document.getElementById("player_source").src = '/songs'+data.song.path;
