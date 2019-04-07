@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mydora</title>
+    <script src="app.js"></script>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body>
+    <div class="container" style="margin-top: 2em;">
+      <div class="row">
+        <div class="col-sm" style="text-align: center;">
+          <img src="mydora.jpg" style="width: 200px">
+          <br><br>
+          <button id="play_button" type="button" class="btn btn-primary btn-lg" onclick="getSong()">Start Playing</button>
+        </div>
+
+        <div id="control_panel" class="col-sm" style="margin-top: 20px; display: none">
+
+          <br><br>
+
+          <audio controls id="player" style="display: none">
+            <source id="player_source" src="" type="audio/mpeg">
+          </audio>
+
+          <br>
+
+          <h5>Now Playing</h5>
+          <div id="song_info" style="font-weight: bold"></div>
+          <small><a onclick="window.open('https://www.google.com/search?q='+document.getElementById('song_info').innerText)" href="#" href="">search on google</a></small>
+          <br><br>
+          <div id="genres"></div>
+
+
+          <br>
+
+          <div id="history_cover" style="display: none">
+            <h5>History</h5>
+            <div id="history" style="overflow-y: scroll; height:10em; width: 30em;">
+          </div>
+
+        </div>
+
+<!--
+        <div class="col-sm">
+          <h5>Search Filters</h5>
+
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" aria-describedby="city">
+          </div>
+
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" aria-describedby="state">
+          </div>
+
+          <div class="form-check">
+            <p>Countries</p>
+            <div style="overflow-y: scroll; height:10em;">
+              <% @countries.each do |country| %>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="country" id="country<%= country[:abbrev] %>" value="<%= country[:abbrev] %>">
+                  <label class="form-check-label" for="country<%= country[:abbrev] %>">
+                  <%= country[:name] %>
+                </label>
+                </div>
+              <% end %>
+            </div>
+            <br>
+            <p>Genres</p>
+            <div style="overflow-y: scroll; height:10em;">
+              <% @genres.each do |genre| %>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="genre" id="genre<%= genre[:id] %>" value="<%= genre[:name] %>">
+                  <label class="form-check-label" for="genre<%= genre[:id] %>">
+                  <%= genre[:name] %>
+                </label>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+-->
+      </div>
+    </div>
+  </body>
+</html>
