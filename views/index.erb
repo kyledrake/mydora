@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Mydora</title>
     <script src="app.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="/favicon.png" />
   </head>
   <body>
@@ -16,6 +18,36 @@
           <img src="mydora.jpg" style="width: 200px">
           <br><br>
           <button id="play_button" type="button" class="btn btn-primary btn-lg" onclick="getSong()">Start Playing</button>
+          <br><br>
+          <small><a href="#" data-toggle="modal" data-target="#exampleModal">what is this?</a></small>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">What is Mydora?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="text-align: left">
+                  <p>
+                    Mydora is a continuous streaming player that gives you a deep dive into the lost archives of Myspace music,
+                    based on some recovered data called the <a href="https://archive.org/details/myspace_dragon_hoard_2010" target="_blank">Dragon Hoard</a>.
+                  </p>
+
+                  <p>Mydora was developed by <a href="https://kyledrake.com" target="_blank">Kyle Drake</a> and the source code is available <a href="https://github.com/kyledrake/mydora" target="_blank">here</a>.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
         <div id="control_panel" class="col-sm" style="margin-top: 20px; display: none">
