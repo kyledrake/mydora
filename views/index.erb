@@ -19,7 +19,7 @@
           <br><br>
           <button id="play_button" type="button" class="btn btn-primary btn-lg" onclick="getSong()">Start Playing</button>
           <br><br>
-	  <small><a href="#" data-toggle="modal" data-target="#exampleModal">what is this?</a><br>(genre/location filtering coming soon)</small>
+	        <small><a href="#" data-toggle="modal" data-target="#exampleModal">what is this?</a><br>(genre/location filtering coming soon)</small>
 
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -85,51 +85,35 @@
           <div id="history_cover" style="display: none">
             <h5>History</h5>
             <div id="history" style="overflow-y: scroll; height:10em; width: 30em;">
+            </div>
           </div>
-
         </div>
 
-<!--
-        <div class="col-sm">
-          <h5>Search Filters</h5>
-
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" aria-describedby="city">
-          </div>
-
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" class="form-control" id="state" aria-describedby="state">
-          </div>
-
+        <div class="col-sm" id="filters" style="display: none">
           <div class="form-check">
-            <p>Countries</p>
-            <div style="overflow-y: scroll; height:10em;">
-              <% @countries.each do |country| %>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="country" id="country<%= country[:abbrev] %>" value="<%= country[:abbrev] %>">
-                  <label class="form-check-label" for="country<%= country[:abbrev] %>">
-                  <%= country[:name] %>
+            <h5>Genres</h5>
+            <div style="overflow-y: scroll; height:50em;">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="genre_id" id="genre_none" value="" checked>
+                <label class="form-check-label" for="genre_none">
+                  NONE
                 </label>
-                </div>
-              <% end %>
-            </div>
-            <br>
-            <p>Genres</p>
-            <div style="overflow-y: scroll; height:10em;">
+              </div>
+
               <% @genres.each do |genre| %>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="genre" id="genre<%= genre[:id] %>" value="<%= genre[:name] %>">
+                  <input class="form-check-input" type="radio" name="genre_id" id="genre<%= genre[:id] %>" value="<%= genre[:id] %>">
                   <label class="form-check-label" for="genre<%= genre[:id] %>">
-                  <%= genre[:name] %>
-                </label>
+                      <%= genre[:name] %>
+                      <small>(<%= $genre_count_cache[genre[:id]] %>)</small>
+                  </label>
                 </div>
               <% end %>
             </div>
           </div>
         </div>
--->
+
+
       </div>
     </div>
   </body>
