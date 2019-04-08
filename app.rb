@@ -24,7 +24,7 @@ get '/song.json' do
 
   # Some of the songs aren't there, loop until we find one
   loop do
-    @song = DB['select * from songs where path LIKE "/1/%"'].all[rand(4815)]
+    @song = DB['select * from songs where id=?', rand(DB[:songs].count)].first
     break if File.exist?('./public/songs'+@song[:path])
   end
 
